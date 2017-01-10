@@ -9,7 +9,7 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
     public class GroupSumCalculator
     {
         
-        public List<int> SumByGroupedRecords(List<Product> products, ColumnName columnName, int numberOfRecords)
+        public IEnumerable<int> SumByGroupedRecords(IEnumerable<Product> products, ColumnName columnName, int numberOfRecords)
         {
             if(!(numberOfRecords > 0))
             {
