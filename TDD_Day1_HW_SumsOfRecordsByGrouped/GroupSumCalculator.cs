@@ -14,7 +14,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
                         .Select(x => x.Select(v => v.Cost).Sum())
                         .ToList();
 
-
+                case "Revenue":
+                    return products.GroupBy(p => (p.Id - 1) / numberOfRecords)
+                        .Select(x => x.Select(v => v.Revenue).Sum())
+                        .ToList();
 
                 default:
                     return null;
