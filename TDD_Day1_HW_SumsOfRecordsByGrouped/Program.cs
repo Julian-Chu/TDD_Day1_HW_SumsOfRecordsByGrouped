@@ -20,7 +20,7 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
             }
             
             GroupSumCalculator calculator = new GroupSumCalculator();
-            var results=calculator.SumByGroupedRecords(Products, ColumnName.Revenue, 3);
+            var results=calculator.SumByGroupedRecords(Products, ColumnName.Revenue, 100);
             foreach(var element in results)
             {
                 System.Console.WriteLine(element);

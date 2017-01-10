@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using ExpectedObjects;
 using TDD_Day1_HW_SumsOfRecordsByGrouped;
+using System;
+using FluentAssertions;
 
 namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
 {
@@ -46,5 +48,51 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
             var expected = new List<int>() { 50, 66, 60 };
             expected.ToExpectedObject().ShouldEqual(actual);
         }
+
+        [TestMethod]
+        public void SumByGroupedRecordsTest_Column_Revenue_Records_MaxInt_Return_176()
+        {
+            //Arrange
+            GroupSumCalculator calc = new GroupSumCalculator();
+            int RecordsToGroup = int.MaxValue;
+
+            //Act
+            var actual = calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+
+            //Assert
+            var expected = new List<int>() { 176};
+            expected.ToExpectedObject().ShouldEqual(actual);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SumbyGroupedRecordsTest_Column_Any_Records_0_Return_InvalidException()
+        {
+            //Arrange
+            GroupSumCalculator calc = new GroupSumCalculator();
+            int RecordsToGroup = 0;
+
+            //Act
+            var actual = calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+
+            //Assert
+            var expected = new List<int>() { 176 };
+            expected.ToExpectedObject().ShouldEqual(actual);
+        }
+
+        [TestMethod]
+        public void SumByGroupedRecordsTest_Column_Revenue_Records_MinInt_Return_InvalidException()
+        {
+            //Arrange
+            GroupSumCalculator calc = new GroupSumCalculator();
+            int RecordsToGroup = int.MinValue;
+
+            //Act
+            Action actual=()=> calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+
+            //Assert
+            var tt = actual.ShouldThrow<ArgumentOutOfRangeException>().WithMessage("*Please input between*");
+            
+        }
+
     }
 }
