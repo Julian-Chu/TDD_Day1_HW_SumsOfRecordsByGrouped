@@ -18,9 +18,9 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
             {
                 System.Console.WriteLine("Id: {0}, Cost: {1}, Revenue: {2}, SellPrice: {3}", product.Id, product.Cost, product.Revenue, product.SellPrice);
             }
-
+            
             GroupSumCalculator calculator = new GroupSumCalculator();
-            var results=calculator.SumByGroupedRecords(Products, "Cost", 3);
+            var results=calculator.SumByGroupedRecords(Products, ColumnName.Revenue, 3);
             foreach(var element in results)
             {
                 System.Console.WriteLine(element);

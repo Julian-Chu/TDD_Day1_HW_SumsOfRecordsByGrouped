@@ -1,11 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TDD_Day1_HW_SumsOfRecordsByGrouped;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ExpectedObjects;
+using TDD_Day1_HW_SumsOfRecordsByGrouped;
 
 namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
 {
@@ -27,11 +23,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         public void SumByGroupedRecordsTest_Column_Cost_Records_3_Returns_6_15_24_21()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            string ColumnName = "Cost";
+            GroupSumCalculator calc = new GroupSumCalculator();            
             int RecordsToGroup = 3;
             //Act
-            var actual=calc.SumByGroupedRecords(Products, ColumnName, RecordsToGroup);
+            var actual=calc.SumByGroupedRecords(Products, ColumnName.Cost, RecordsToGroup);
 
             //Assert
             var expected = new List<int>() { 6, 15, 24, 21 };
@@ -42,11 +37,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         {
             //Arrange
             GroupSumCalculator calc = new GroupSumCalculator();
-            string ColumnName = "Revenue";
             int RecordsToGroup = 4;
 
             //Act
-            var actual = calc.SumByGroupedRecords(Products, ColumnName, RecordsToGroup);
+            var actual = calc.SumByGroupedRecords(Products,ColumnName.Revenue , RecordsToGroup);
 
             //Assert
             var expected = new List<int>() { 50, 66, 60 };

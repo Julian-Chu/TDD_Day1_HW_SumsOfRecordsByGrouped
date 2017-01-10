@@ -13,4 +13,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
         public int Revenue { get; set; }
         public int SellPrice { get; set; }
     }
+
+    public enum ColumnName
+    {
+        Cost,
+        Revenue
+    }
 }
