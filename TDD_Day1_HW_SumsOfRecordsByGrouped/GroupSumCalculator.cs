@@ -10,10 +10,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
             switch (columnName)
             {
                 case "Cost":
-                    var results = products.GroupBy(p => (p.Id - 1) / numberOfRecords)
+                    return products.GroupBy(p => (p.Id - 1) / numberOfRecords)
                         .Select(x => x.Select(v => v.Cost).Sum())
                         .ToList();
-                    return results;
+
 
 
                 default:

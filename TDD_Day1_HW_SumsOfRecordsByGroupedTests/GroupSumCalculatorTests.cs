@@ -35,7 +35,22 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
 
             //Assert
             var expected = new List<int>() { 6, 15, 24, 21 };
-            expected.ToExpectedObject().Equals(actual);
+            expected.ToExpectedObject().ShouldEqual(actual);
+        }
+        [TestMethod()]
+        public void SumByGroupedRecordsTest_Column_Revenue_Records_4_Return_50_66_60()
+        {
+            //Arrange
+            GroupSumCalculator calc = new GroupSumCalculator();
+            string ColumnName = "Revenue";
+            int RecordsToGroup = 4;
+
+            //Act
+            var actual = calc.SumByGroupedRecords(Products, ColumnName, RecordsToGroup);
+
+            //Assert
+            var expected = new List<int>() { 50, 66, 60 };
+            expected.ToExpectedObject().ShouldEqual(actual);
         }
     }
 }
