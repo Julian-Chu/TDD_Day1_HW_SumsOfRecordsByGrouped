@@ -39,5 +39,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
                     return null;
             }
         }
+
+        public object SumByGroupedRecords(object products, ColumnName cost, int recordsToGroup)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

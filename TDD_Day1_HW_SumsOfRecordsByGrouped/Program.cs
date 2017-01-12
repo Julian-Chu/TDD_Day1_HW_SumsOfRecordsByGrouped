@@ -7,7 +7,7 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
     {
         private static void Main(string[] args)
         {
-
+            
         }
     }
 }
