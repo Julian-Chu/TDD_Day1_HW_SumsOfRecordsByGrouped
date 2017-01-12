@@ -9,12 +9,12 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
     [TestClass()]
     public class GroupSumCalculatorTests
     {
-        private List<Product> Products;
+        private List<Product> products;
 
         [TestInitialize]
         public void InitializeDataSource()
         {
-            Products = new List<Product>()
+            products = new List<Product>()
             {
                 new Product {Id=1, Cost=1, Revenue=11, SellPrice=21 },
                 new Product {Id=2, Cost=2, Revenue=12, SellPrice=22 },
@@ -35,10 +35,10 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         public void SumByGroupedRecordsTest_Column_Cost_Records_3_Returns_6_15_24_21()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            int RecordsToGroup = 3;
+            GroupSumCalculator calculator = new GroupSumCalculator();
+            int groupSize = 3;
             //Act
-            var actual = calc.SumByGroupedRecords(Products, ColumnName.Cost, RecordsToGroup);
+            var actual = calculator.SumByGroupedRecords(products, ColumnName.Cost, groupSize);
 
             //Assert
             var expected = new List<int>() { 6, 15, 24, 21 };
@@ -49,11 +49,11 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         public void SumByGroupedRecordsTest_Column_Revenue_Records_4_Return_50_66_60()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            int RecordsToGroup = 4;
+            GroupSumCalculator calculator = new GroupSumCalculator();
+            int groupSize = 4;
 
             //Act
-            var actual = calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+            var actual = calculator.SumByGroupedRecords(products, ColumnName.Revenue, groupSize);
 
             //Assert
             var expected = new List<int>() { 50, 66, 60 };
@@ -64,11 +64,11 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         public void SumByGroupedRecordsTest_Column_Revenue_Records_MaxInt_Return_176()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            int RecordsToGroup = int.MaxValue;
+            GroupSumCalculator calculator = new GroupSumCalculator();
+            int groupSize = int.MaxValue;
 
             //Act
-            var actual = calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+            var actual = calculator.SumByGroupedRecords(products, ColumnName.Revenue, groupSize);
 
             //Assert
             var expected = new List<int>() { 176 };
@@ -80,26 +80,27 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped.Tests
         public void SumbyGroupedRecordsTest_Column_Any_Records_0_Return_InvalidException()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            int RecordsToGroup = 0;
+            GroupSumCalculator calculator = new GroupSumCalculator();
+            int groupSize = 0;
 
             //Act
-            var actual = calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+            var actual = calculator.SumByGroupedRecords(products, ColumnName.Revenue, groupSize);
 
             //Assert
             var expected = new List<int>() { 176 };
             expected.ToExpectedObject().ShouldEqual(actual);
         }
 
+
         [TestMethod]
         public void SumByGroupedRecordsTest_Column_Revenue_Records_MinInt_Return_InvalidException()
         {
             //Arrange
-            GroupSumCalculator calc = new GroupSumCalculator();
-            int RecordsToGroup = int.MinValue;
+            GroupSumCalculator calculator = new GroupSumCalculator();
+            int groupSize = int.MinValue;
 
             //Act
-            Action actual = () => calc.SumByGroupedRecords(Products, ColumnName.Revenue, RecordsToGroup);
+            Action actual = () => calculator.SumByGroupedRecords(products, ColumnName.Revenue, groupSize);
 
             //Assert
             var tt = actual.ShouldThrow<ArgumentOutOfRangeException>().WithMessage("*Please input between*");

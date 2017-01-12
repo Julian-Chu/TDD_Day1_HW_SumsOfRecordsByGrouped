@@ -39,5 +39,6 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
                     return null;
             }
         }
+
     }
 }
