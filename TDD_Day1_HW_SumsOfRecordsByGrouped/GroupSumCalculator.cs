@@ -40,5 +40,12 @@ namespace TDD_Day1_HW_SumsOfRecordsByGrouped
             }
         }
 
+        public IEnumerable<int> SumByPageSizeWithReflection(IEnumerable<Product> products, string columnName, int pageSize)
+        {
+            var targetClass = new Product();
+            IEnumerable<string> properties = targetClass.GetType().GetProperties().Select(p=>p.Name);
+
+            return null;
+        }
     }
 }

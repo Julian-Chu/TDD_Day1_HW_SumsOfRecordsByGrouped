@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD_Day1_HW_SumsOfRecordsBy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD_Day1_HW_SumsOfRecordsByGroupedTests", "TDD_Day1_HW_SumsOfRecordsByGroupedTests\TDD_Day1_HW_SumsOfRecordsByGroupedTests.csproj", "{72AD186E-DCBD-40BB-A73A-E462F79B9F32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumByPageSizeTests_WithReflection_Tests", "SumByPageSize_WithReflection_Tests\SumByPageSizeTests_WithReflection_Tests.csproj", "{AC1412FD-B4A0-4C8A-B08A-C1983C134C28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{72AD186E-DCBD-40BB-A73A-E462F79B9F32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72AD186E-DCBD-40BB-A73A-E462F79B9F32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72AD186E-DCBD-40BB-A73A-E462F79B9F32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1412FD-B4A0-4C8A-B08A-C1983C134C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1412FD-B4A0-4C8A-B08A-C1983C134C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1412FD-B4A0-4C8A-B08A-C1983C134C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1412FD-B4A0-4C8A-B08A-C1983C134C28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
