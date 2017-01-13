@@ -7,7 +7,7 @@ using TDD_Day1_HW_SumsOfRecordsByGrouped;
 namespace SumByPageSize_WithReflection_Tests
 {
     [TestClass]
-    public class SumByPageSize
+    public class SumByPageSizeTests
     {
         [TestMethod]
         public void GetSumTest_Source_5_3_1_PageSize_2_Returns_8_1()
